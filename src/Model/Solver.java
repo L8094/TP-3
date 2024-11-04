@@ -35,7 +35,7 @@ public class Solver {
 
 	
 	public ArrayList<Oferta> objetosOrdenados(){
-		ArrayList<Oferta> objetos = sala.getObjetos();
+		ArrayList<Oferta> objetos = sala.getOfertas();
 		Collections.sort(objetos,compare);
 		
 		return objetos;

@@ -1,11 +1,12 @@
 package Presenter;
 
+import java.sql.Time; 
+
 import Model.Oferta;
 import Model.SalaEnsayo;
 
 public class Observador {
 	private SalaEnsayo sala;
-
 	public Observador (SalaEnsayo sala) {
 		this.sala = sala;
 	}
@@ -13,7 +14,7 @@ public class Observador {
 	public void enviarOferta(String inicio , String fin, String dinero) {
 		int ini = Integer.parseInt(inicio);
 		int fi = Integer.parseInt(fin);
-		int din = Integer.parseInt(dinero);
+		double din = Double.parseDouble(dinero);
 		
         Oferta nuevaOferta = new Oferta(ini, fi, din);
         

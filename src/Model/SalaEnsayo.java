@@ -36,8 +36,9 @@ public class SalaEnsayo {
 	        }
 	    }
 	
+	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Oferta> getObjetos(){
+	public ArrayList<Oferta> getOfertas(){
 		return new ArrayList(ofertas);
 	}
 }

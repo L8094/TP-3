@@ -3,10 +3,10 @@ package Model;
 public class Oferta {
 	private int inicio;
     private int fin;
-    private int monto;
+    private double monto;
     
     
-    public Oferta(int inicio, int fin, int monto) {
+    public Oferta(int inicio, int fin, double monto) {
     	this.inicio = inicio;
     	this.fin = fin;
     	this.monto = monto;
@@ -21,7 +21,7 @@ public class Oferta {
         return fin;
     }
 
-    public int getMonto() {
+    public double getMonto() {
         return monto;
     }
 
