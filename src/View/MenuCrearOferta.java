@@ -20,11 +20,13 @@
 import javax.swing.ImageIcon;
 
 import java.awt.Cursor;
+import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 	
 	public class MenuCrearOferta  {
 		
 		JTextArea espacioOfertas = new JTextArea();
-		private JFrame frame;
+		private JFrame frmFormulario;
 		private JTextField espacioMonto;
 		private JLabel labelHorarioInicio;
 		private JLabel labelHorarioFin;
@@ -43,7 +45,7 @@ import java.awt.Cursor;
 					try {
 						
 						MenuCrearOferta window = new MenuCrearOferta();
-						window.frame.setVisible(true);
+						window.frmFormulario.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -58,6 +60,7 @@ import java.awt.Cursor;
 	
 		private void botonEnviarOfer() {
 			JButton botonEnviarOferta = new JButton("Crear nueva oferta");
+			botonEnviarOferta.setFocusPainted(false);
 			botonEnviarOferta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			botonEnviarOferta.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			botonEnviarOferta.setForeground(Color.BLUE);
@@ -85,7 +88,7 @@ import java.awt.Cursor;
 			    }
 			});
 			botonEnviarOferta.setBounds(70, 360, 182, 23);
-			frame.getContentPane().add(botonEnviarOferta);
+			frmFormulario.getContentPane().add(botonEnviarOferta);
 		}
 		
 		private void imputOfertaUsuario() {
@@ -93,17 +96,17 @@ import java.awt.Cursor;
 			horaInicio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			horaInicio.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}));
 			horaInicio.setBounds(112, 92, 59, 22);
-			frame.getContentPane().add(horaInicio);
+			frmFormulario.getContentPane().add(horaInicio);
 			
 			horaFin = new JComboBox<Integer>();
 			horaFin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			horaFin.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24}));
 			horaFin.setBounds(112, 125, 59, 22);
-			frame.getContentPane().add(horaFin);
+			frmFormulario.getContentPane().add(horaFin);
 			
 			espacioMonto = new JTextField();
 			espacioMonto.setBounds(112, 171, 125, 20);
-			frame.getContentPane().add(espacioMonto);
+			frmFormulario.getContentPane().add(espacioMonto);
 			espacioMonto.setColumns(10);
 			
 		}
@@ -113,58 +116,66 @@ import java.awt.Cursor;
 			labelHorarioInicio.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			labelHorarioInicio.setForeground(Color.BLUE);
 			labelHorarioInicio.setBounds(43, 97, 59, 14);
-			frame.getContentPane().add(labelHorarioInicio);
+			frmFormulario.getContentPane().add(labelHorarioInicio);
 			
 			labelHorarioFin = new JLabel("Hs fin:");
 			labelHorarioFin.setForeground(Color.BLUE);
 			labelHorarioFin.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			labelHorarioFin.setBounds(43, 133, 59, 14);
-			frame.getContentPane().add(labelHorarioFin);
+			frmFormulario.getContentPane().add(labelHorarioFin);
 			
 			labelMonto = new JLabel("Oferta :");
 			labelMonto.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			labelMonto.setForeground(Color.BLUE);
 			labelMonto.setBounds(43, 173, 59, 14);
-			frame.getContentPane().add(labelMonto);
+			frmFormulario.getContentPane().add(labelMonto);
 		}
 
 		private void btnAgregarOferta() {
 			JButton btnGuardarOfertas = new JButton("Guardar Ofertas");
+			btnGuardarOfertas.setFocusPainted(false);
 			btnGuardarOfertas.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnGuardarOfertas.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			btnGuardarOfertas.setForeground(Color.BLUE);
 			btnGuardarOfertas.setBounds(417, 360, 194, 23);
-			frame.getContentPane().add(btnGuardarOfertas);
+			frmFormulario.getContentPane().add(btnGuardarOfertas);
 			
 			espacioNombreUsuario = new JTextField();
 			espacioNombreUsuario.setBounds(125, 31, 153, 20);
-			frame.getContentPane().add(espacioNombreUsuario);
+			frmFormulario.getContentPane().add(espacioNombreUsuario);
 			espacioNombreUsuario.setColumns(10);
 			
 			JLabel labelUsuario = new JLabel("Nombre y Apellido:");
-			labelUsuario.setForeground(Color.BLACK);
+			labelUsuario.setForeground(Color.BLUE);
 			labelUsuario.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			labelUsuario.setBounds(10, 29, 127, 23);
-			frame.getContentPane().add(labelUsuario);
+			frmFormulario.getContentPane().add(labelUsuario);
 			
 			JButton btnVueltaMenuPrincipal = new JButton("Menu Principal");
+			btnVueltaMenuPrincipal.setBorderPainted(false);
+			
+			btnVueltaMenuPrincipal.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnVueltaMenuPrincipal.setVerticalTextPosition(SwingConstants.BOTTOM);
+			btnVueltaMenuPrincipal.setContentAreaFilled(false);
+			btnVueltaMenuPrincipal.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/flechaIzquierda.png")));
 			btnVueltaMenuPrincipal.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnVueltaMenuPrincipal.setFocusPainted(false);
 			btnVueltaMenuPrincipal.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					frame.setVisible(false);
+					frmFormulario.setVisible(false);
 					presenter.setVistaMenuPpal(true);
 					
 				}
 			});
 			btnVueltaMenuPrincipal.setForeground(Color.BLUE);
 			btnVueltaMenuPrincipal.setFont(new Font("Tahoma", Font.PLAIN, 13));
-			btnVueltaMenuPrincipal.setBounds(277, 430, 127, 23);
-			frame.getContentPane().add(btnVueltaMenuPrincipal);
+			btnVueltaMenuPrincipal.setBounds(277, 410, 127, 83);
+			frmFormulario.getContentPane().add(btnVueltaMenuPrincipal);
 			
 			fondoOfertas = new JLabel("");
-			fondoOfertas.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/fondoTPM.jpg")));
+			fondoOfertas.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/fondoTp.jpg")));
 			fondoOfertas.setBounds(0, 0, 734, 561);
-			frame.getContentPane().add(fondoOfertas);
+			frmFormulario.getContentPane().add(fondoOfertas);
 			
 			btnGuardarOfertas.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -175,11 +186,13 @@ import java.awt.Cursor;
 			
 		}
 		private void initialize() {
-			frame = new JFrame();
-			frame.setBounds(100, 100, 700, 600);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.getContentPane().setLayout(null);
-			frame.setResizable(false);
+			frmFormulario = new JFrame();
+			frmFormulario.setIconImage(Toolkit.getDefaultToolkit().getImage(MenuCrearOferta.class.getResource("/Imagenes/fondoTPM.jpg")));
+			frmFormulario.setTitle("FORMULARIO");
+			frmFormulario.setBounds(100, 100, 700, 600);
+			frmFormulario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frmFormulario.getContentPane().setLayout(null);
+			frmFormulario.setResizable(false);
 			botonEnviarOfer();
 			imputOfertaUsuario();
 			lblVentana();
@@ -187,7 +200,7 @@ import java.awt.Cursor;
 			espacioOfertas.setBackground(Color.LIGHT_GRAY);
 			espacioOfertas.setEditable(false);
 			espacioOfertas.setBounds(417, 20, 194, 257);
-			frame.getContentPane().add(espacioOfertas);
+			frmFormulario.getContentPane().add(espacioOfertas);
 			btnAgregarOferta();
 
 		}
@@ -208,7 +221,7 @@ import java.awt.Cursor;
 		}
 
 		public void setVisible(boolean o) {
-			this.frame.setVisible(o);
+			this.frmFormulario.setVisible(o);
 			
 		}
 	

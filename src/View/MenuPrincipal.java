@@ -3,11 +3,15 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -27,6 +31,9 @@ import javax.swing.border.BevelBorder;
 import javax.swing.UIManager;
 import java.awt.Rectangle;
 import java.awt.Cursor;
+import javax.swing.SwingConstants;
+import java.awt.Insets;
+import java.awt.Font;
 
 public class MenuPrincipal extends JFrame {
 
@@ -73,25 +80,29 @@ public class MenuPrincipal extends JFrame {
     private void calendario() {
         JCalendar calendar_1 = new JCalendar();
         calendar_1.getDayChooser().getDayPanel().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        calendar_1.setBounds(46, 11, 493, 234);
+        calendar_1.setBounds(46, 11, 493, 224);
         frameMenuPpal.add(calendar_1);
         btnObtenerFecha(calendar_1);
         
         JLabel fondoCalendario = new JLabel("");
         fondoCalendario.setBounds(0, 0, 584, 361);
+        fondoCalendario.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/fondoCalendario.jpg")));
         frameMenuPpal.add(fondoCalendario);
 
     }
     
     private void btnObtenerFecha(JCalendar calend) {
         JButton btnObtenerFecha = new JButton("Obtener adjudicaciones en la fecha seleccionada");
-        btnObtenerFecha.setContentAreaFilled(false);
+        btnObtenerFecha.setHorizontalTextPosition(SwingConstants.CENTER);
+        btnObtenerFecha.setIcon(null);
         btnObtenerFecha.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnObtenerFecha.setBorder(new LineBorder(new Color(0, 0, 0)));
-        btnObtenerFecha.setBounds(120, 263, 349, 30);
+        btnObtenerFecha.setBounds(122, 245, 349, 29);
         btnObtenerFecha.setBorder(new LineBorder(Color.BLACK, 1, true));
+        btnObtenerFecha.setFocusPainted(false);
         frameMenuPpal.add(btnObtenerFecha);
-
+      
+    
         btnObtenerFecha.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Date fechaSeleccionada = calend.getDate();
@@ -104,9 +115,15 @@ public class MenuPrincipal extends JFrame {
 
     private void botonAgregarOferta() {
         JButton btnAgregarOferta = new JButton("Agregar oferta para mañana");
+        btnAgregarOferta.setFont(new Font("Tahoma", Font.BOLD, 11));
+        btnAgregarOferta.setVerticalTextPosition(SwingConstants.BOTTOM);
+        btnAgregarOferta.setHorizontalTextPosition(SwingConstants.CENTER);
+        btnAgregarOferta.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/Imagenes/flechaDerecha.png")));
+        btnAgregarOferta.setContentAreaFilled(false);
         btnAgregarOferta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnAgregarOferta.setBounds(120, 321, 349, 29);
-        btnAgregarOferta.setBorder(new LineBorder(Color.BLACK, 1, true));
+        btnAgregarOferta.setBounds(209, 273, 169, 88);
+        btnAgregarOferta.setBorder(null);
+        btnAgregarOferta.setFocusPainted(false);
         
         frameMenuPpal.add(btnAgregarOferta);
         btnAgregarOferta.addActionListener(new ActionListener() {
