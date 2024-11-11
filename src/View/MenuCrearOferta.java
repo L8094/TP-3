@@ -17,6 +17,8 @@
 	import Presenter.Presentador;
 	import javax.swing.JComboBox;
 	import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+
 import java.awt.Cursor;
 	
 	public class MenuCrearOferta  {
@@ -160,7 +162,7 @@ import java.awt.Cursor;
 			frame.getContentPane().add(btnVueltaMenuPrincipal);
 			
 			fondoOfertas = new JLabel("");
-			//fondoOfertas.setIcon(new ImageIcon(ventanaDeOfertas.class.getResource("/Imagenes/fondoTp3.jpg")));
+			fondoOfertas.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/fondoTPM.jpg")));
 			fondoOfertas.setBounds(0, 0, 734, 561);
 			frame.getContentPane().add(fondoOfertas);
 			
