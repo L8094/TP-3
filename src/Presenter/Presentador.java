@@ -18,16 +18,13 @@ public class Presentador{
         this.ofertaManager = new OfertaManager();
         this.vistaOfertas = vistaOfertas;
         this.vistaMenuPpal = vistaMenuPpal; 
+     
     }
     
-    public Presentador(MenuCrearOferta vistaOfertas) {
-        this.ofertaManager = new OfertaManager();
-        this.vistaOfertas = vistaOfertas;
-    }
-    
-    public void agregarOferta(Integer inicio, Integer fin, String dinero) {
+
+    public void agregarOferta(Integer inicio, Integer fin, String dinero, String usuario) {
         double din = Double.parseDouble(dinero);
-        Oferta nuevaOferta = new Oferta(inicio, fin, din);
+        Oferta nuevaOferta = new Oferta(inicio, fin, din,usuario);
         OfertaManager.agregarOfertaEnMemoria(nuevaOferta);
         vistaOfertas.actualizarOferta(nuevaOferta);
     }
@@ -58,6 +55,16 @@ public class Presentador{
         Solver solver = new Solver(ofertasFiltradasPorFecha, comparador);
         return solver.resolver();
     }
+
+    
+    
+	public void setVistaMenuPpal(boolean p) {
+		 vistaMenuPpal.setVisible(p);
+	}
+	
+	public void setVistaMenuOferta(boolean o) {
+		vistaOfertas.setVisible(o);
+	}
 }
 
 

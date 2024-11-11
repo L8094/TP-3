@@ -6,7 +6,6 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,11 +15,18 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JOptionPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+
 import com.toedter.calendar.JCalendar;
 import Model.Oferta;
 import Presenter.Presentador;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.UIManager;
+import java.awt.Rectangle;
+import java.awt.Cursor;
 
 public class MenuPrincipal extends JFrame {
 
@@ -50,19 +56,24 @@ public class MenuPrincipal extends JFrame {
         frameMenuPpal.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(frameMenuPpal);
         frameMenuPpal.setLayout(null);
+        this.setResizable(false);
         botonAgregarOferta();
         calendario();
     }
 
     public MenuPrincipal() {
-        ventanaOferta = new MenuCrearOferta();  
+    	setTitle("CALENDARIO(MENU PRINCIPAL)");
+        ventanaOferta = new MenuCrearOferta(); 
         presenter = new Presentador(ventanaOferta, this);
+        ventanaOferta.setPresenter(presenter);
+        
         initialize();
     }
 
     private void calendario() {
         JCalendar calendar_1 = new JCalendar();
-        calendar_1.setBounds(120, 11, 349, 220);
+        calendar_1.getDayChooser().getDayPanel().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        calendar_1.setBounds(46, 11, 493, 234);
         frameMenuPpal.add(calendar_1);
         btnObtenerFecha(calendar_1);
 
@@ -70,7 +81,11 @@ public class MenuPrincipal extends JFrame {
     
     private void btnObtenerFecha(JCalendar calend) {
         JButton btnObtenerFecha = new JButton("Obtener adjudicaciones en la fecha seleccionada");
+        btnObtenerFecha.setContentAreaFilled(false);
+        btnObtenerFecha.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btnObtenerFecha.setBorder(UIManager.getBorder("RadioButtonMenuItem.border"));
         btnObtenerFecha.setBounds(120, 263, 349, 30);
+        btnObtenerFecha.setBorder(new LineBorder(Color.BLACK, 1, true));
         frameMenuPpal.add(btnObtenerFecha);
 
         btnObtenerFecha.addActionListener(new ActionListener() {
@@ -85,12 +100,14 @@ public class MenuPrincipal extends JFrame {
 
     private void botonAgregarOferta() {
         JButton btnAgregarOferta = new JButton("Agregar oferta para mañana");
+        btnAgregarOferta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnAgregarOferta.setBounds(120, 321, 349, 29);
+        btnAgregarOferta.setBorder(new LineBorder(Color.BLACK, 1, true));
         frameMenuPpal.add(btnAgregarOferta);
         btnAgregarOferta.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 MenuPrincipal.this.setVisible(false);
-                MenuCrearOferta.main(null);
+                presenter.setVistaMenuOferta(true);
             }
         });
     }
@@ -136,6 +153,8 @@ public class MenuPrincipal extends JFrame {
 	public void noHayOfertasEnFecha() {
         JOptionPane.showMessageDialog(frameMenuPpal, "No hay ofertas para la fecha seleccionada.");
 	}
+	
+	
 
 
 }

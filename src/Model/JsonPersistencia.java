@@ -33,6 +33,7 @@ public class JsonPersistencia {
 
         for (Oferta oferta : ofertas) {
             JsonObject jsonOferta = new JsonObject();
+            jsonOferta.addProperty("Nombre y Apellido", oferta.getUsuario());;
             jsonOferta.addProperty("inicio", oferta.getInicio());
             jsonOferta.addProperty("fin", oferta.getFin());
             jsonOferta.addProperty("monto", oferta.getMonto());

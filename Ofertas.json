@@ -1,0 +1,82 @@
+[
+  {
+    "inicio": 6,
+    "fin": 10,
+    "monto": 156666.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 6,
+    "fin": 8,
+    "monto": 2000000.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 9,
+    "fin": 16,
+    "monto": 3423434.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 5,
+    "fin": 8,
+    "monto": 676768.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 5,
+    "fin": 15,
+    "monto": 9.089089E7,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 4,
+    "fin": 16,
+    "monto": 2312321.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 2,
+    "fin": 7,
+    "monto": 23123.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 3,
+    "fin": 6,
+    "monto": 3123123.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 1,
+    "fin": 2,
+    "monto": 123456.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 1,
+    "fin": 2,
+    "monto": 123456.0,
+    "fecha": "2024-11-11"
+  },
+  {
+    "inicio": 17,
+    "fin": 20,
+    "monto": 500000.0,
+    "fecha": "2024-11-12"
+  },
+  {
+    "Nombre y Apellido": "Nahuel Ibarrola",
+    "inicio": 4,
+    "fin": 8,
+    "monto": 2.0E8,
+    "fecha": "2024-11-12"
+  },
+  {
+    "Nombre y Apellido": "ny",
+    "inicio": 2,
+    "fin": 6,
+    "monto": 676.0,
+    "fecha": "2024-11-12"
+  }
+]
