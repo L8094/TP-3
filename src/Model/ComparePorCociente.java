@@ -9,9 +9,9 @@ public class ComparePorCociente implements Comparator<Oferta> {
 	{
 		
 		double cocienteUno = uno.getMonto() / (uno.getFin() - uno.getInicio());
-		double cocienteDos = dos.getMonto() / (dos.getFin() - uno.getInicio());
+		double cocienteDos = dos.getMonto() / (dos.getFin() - dos.getInicio());
 		
-		/// -1 ordena (uno-dos) 	+1 ordena (dos-uno)
+	
 		if( cocienteUno < cocienteDos )
 			return 1;
 		else if( cocienteUno == cocienteDos )

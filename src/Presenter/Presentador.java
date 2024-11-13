@@ -65,6 +65,14 @@ public class Presentador{
 	public void setVistaMenuOferta(boolean o) {
 		vistaOfertas.setVisible(o);
 	}
+	
+	public void borrarOfertasDeMemoria() {
+        OfertaManager.borrarOfertasDeMemoria();
+    }
+	
+	public boolean hayOfertas() {
+		return OfertaManager.hayOfertasEnMemoria();
+	}
 }
 
 

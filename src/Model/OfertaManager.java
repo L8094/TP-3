@@ -52,5 +52,14 @@ import java.io.FileReader;
 		        }
 		        return ofertasFiltradas;
 		    }
+		
+		public static void borrarOfertasDeMemoria() {
+			ofertasEnMemoria.clear();
+            System.out.println("se borro todo");
+        }
+		
+		public static boolean hayOfertasEnMemoria() {
+			return !ofertasEnMemoria.isEmpty();
+		}
 	}
 	
