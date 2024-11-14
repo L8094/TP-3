@@ -12,10 +12,11 @@ import java.io.FileReader;
 	public class OfertaManager {
 	    private static JsonPersistencia jsonpersistencia;
 	    private static ArrayList<Oferta> ofertasEnMemoria;
-	    private static final String ruta = "Ofertas.json";
+	    private static String ruta;
 	
-	    public OfertaManager() {
-	        OfertaManager.jsonpersistencia = new JsonPersistencia();  
+	    public OfertaManager(String ruta) {
+	    	OfertaManager.ruta= ruta;
+	        OfertaManager.jsonpersistencia = new JsonPersistencia(ruta);  
 	        OfertaManager.ofertasEnMemoria = new ArrayList<>();
 	    }
 				

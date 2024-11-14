@@ -15,7 +15,7 @@ public class Presentador{
     private OfertaManager ofertaManager;
     
     public Presentador(MenuCrearOferta vistaOfertas, MenuPrincipal vistaMenuPpal) {
-        this.ofertaManager = new OfertaManager();
+        this.ofertaManager = new OfertaManager("Ofertas.json");
         this.vistaOfertas = vistaOfertas;
         this.vistaMenuPpal = vistaMenuPpal; 
      

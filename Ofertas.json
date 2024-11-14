@@ -85,5 +85,40 @@
     "fin": 6,
     "monto": 3213213.0,
     "fecha": "2024-11-12"
+  },
+  {
+    "Nombre y Apellido": "y",
+    "inicio": 3,
+    "fin": 7,
+    "monto": 20.0,
+    "fecha": "2024-11-15"
+  },
+  {
+    "Nombre y Apellido": "i",
+    "inicio": 3,
+    "fin": 5,
+    "monto": 30.0,
+    "fecha": "2024-11-15"
+  },
+  {
+    "Nombre y Apellido": "y",
+    "inicio": 4,
+    "fin": 6,
+    "monto": 20.0,
+    "fecha": "2024-11-15"
+  },
+  {
+    "Nombre y Apellido": "usuarioTest",
+    "inicio": 1,
+    "fin": 10,
+    "monto": 100.0,
+    "fecha": "2024-11-15"
+  },
+  {
+    "Nombre y Apellido": "pol",
+    "inicio": 4,
+    "fin": 11,
+    "monto": 50.0,
+    "fecha": "2024-11-15"
   }
 ]

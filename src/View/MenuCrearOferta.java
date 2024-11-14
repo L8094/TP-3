@@ -166,12 +166,12 @@ import java.awt.Toolkit;
 		frmFormulario.getContentPane().add(btnBorrarOfertas);
 		btnBorrarOfertas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(	presenter.hayOfertas()) {
-					presenter.borrarOfertasDeMemoria();
-					espacioOfertas.setText("");
-				}
+				if(!presenter.hayOfertas()) {
 				 JOptionPane.showMessageDialog(null, "No hay ofertas para eliminar");
 				}
+				presenter.borrarOfertasDeMemoria();
+				espacioOfertas.setText("");
+			}
 		});
 	}
 	
@@ -191,11 +191,11 @@ import java.awt.Toolkit;
 		frmFormulario.getContentPane().add(btnEnviarOfertasJson);
 		btnEnviarOfertasJson.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			if(	presenter.hayOfertas()) {
-				presenter.agregarOfertas();
-				espacioOfertas.setText("");
-			}
+			if(	!presenter.hayOfertas()) {	
 			 JOptionPane.showMessageDialog(null, "No hay ofertas para guardar en el sistema");
+			}
+			presenter.agregarOfertas();
+			espacioOfertas.setText("");
 			}
 		});
 		
