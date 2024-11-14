@@ -157,7 +157,7 @@ import java.awt.Toolkit;
 		btnBorrarOfertas.setBorderPainted(false);
 		btnBorrarOfertas.setHorizontalTextPosition(SwingConstants.CENTER);
 		btnBorrarOfertas.setVerticalTextPosition(SwingConstants.BOTTOM);
-		btnBorrarOfertas.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/lgoGuardar.png")));
+		btnBorrarOfertas.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/papelera.png")));
 		btnBorrarOfertas.setFocusPainted(false);
 		btnBorrarOfertas.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnBorrarOfertas.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -229,7 +229,7 @@ import java.awt.Toolkit;
 	private void fondo() {
 		fondoOfertas = new JLabel("");
 		fondoOfertas.setForeground(Color.BLACK);
-		fondoOfertas.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/fondoTPM.jpg")));
+		fondoOfertas.setIcon(new ImageIcon(MenuCrearOferta.class.getResource("/Imagenes/fondoTp.jpg")));
 		fondoOfertas.setBounds(0, 0, 584, 561);
 		frmFormulario.getContentPane().add(fondoOfertas);
 		}
@@ -250,7 +250,7 @@ import java.awt.Toolkit;
 			
 		private void initialize() {
 			frmFormulario = new JFrame();
-			frmFormulario.setIconImage(Toolkit.getDefaultToolkit().getImage(MenuCrearOferta.class.getResource("/Imagenes/fondoTPM.jpg")));
+			frmFormulario.setIconImage(Toolkit.getDefaultToolkit().getImage(MenuCrearOferta.class.getResource("/Imagenes/fondoTp.jpg")));
 			frmFormulario.setTitle("CREAR OFERTAS");
 			frmFormulario.setBounds(100, 100, 600, 600);
 			frmFormulario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
