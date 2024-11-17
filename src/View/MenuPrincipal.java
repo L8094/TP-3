@@ -42,7 +42,6 @@ package View;
 	    private MenuCrearOferta ventanaOferta;
         JFrame transicionFrame = new JFrame("  SALA DE ENSAYOS GENERALES"); 
         
-        
 	    public MenuPrincipal() {
 	        setSize(600, 600);
 	        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -96,7 +95,6 @@ package View;
 	        JOptionPane.showMessageDialog(frameMenuPpal, "No hay ofertas para la fecha seleccionada.");
 		}
 	
-	
 	    private void calendario() {
 	        JCalendar calendar_1 = new JCalendar();
 	        calendar_1.getYearChooser().setBackground(new Color(128, 0, 0));
@@ -127,11 +125,9 @@ package View;
 	            new ImageIcon(getClass().getResource("/Imagenes/fondoTp.jpg"))
 	                .getImage()
 	                .getScaledInstance(600, 600, Image.SCALE_SMOOTH)
-	        );
-	        
+	        );     
 	        fondoCalendario.setIcon(fondoIcon);
 	        frameMenuPpal.add(fondoCalendario);
-	        
 	        JMenuItem menuItem = new JMenuItem("New menu item");
 	        menuItem.setBounds(10, 0, 137, 26);
 	        frameMenuPpal.add(menuItem);
@@ -147,8 +143,7 @@ package View;
 	        btnObtenerFecha.setBorder(new LineBorder(Color.BLACK, 1, true));
 	        btnObtenerFecha.setFocusPainted(false);
 	        frameMenuPpal.add(btnObtenerFecha);
-	      
-	    
+	 	    
 	        btnObtenerFecha.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                Date fechaSeleccionada = calend.getDate();
@@ -167,7 +162,6 @@ package View;
 	        Date fechaManana = calendar.getTime();
 	        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM");
 	        String fechaFormateada = sdf.format(fechaManana);
-
 	        ImageIcon originalIcon = new ImageIcon(MenuPrincipal.class.getResource("/Imagenes/lgoCrear1.png"));
 	        ImageIcon darkIcon = createDarkIcon(originalIcon.getImage());
 	        ImageIcon scaledOriginalIcon = new ImageIcon(originalIcon.getImage().getScaledInstance(85, 85, Image.SCALE_SMOOTH));
@@ -184,7 +178,6 @@ package View;
 	        btnAgregarOferta.setBounds(200, 428, 200, 130);
 	        btnAgregarOferta.setBorder(null);
 	        btnAgregarOferta.setFocusPainted(false);
-
 	        btnAgregarOferta.addMouseListener(new java.awt.event.MouseAdapter() {
 	            @Override
 	            public void mouseEntered(MouseEvent e) {
@@ -195,7 +188,6 @@ package View;
 	                btnAgregarOferta.setIcon(scaledOriginalIcon); 
 	            }
 	        });
-
 	        frameMenuPpal.add(btnAgregarOferta);
 	        btnAgregarOferta.addActionListener(e -> {
 	            MenuPrincipal.this.setVisible(false);
@@ -217,8 +209,6 @@ package View;
 	        return new ImageIcon(bufferedImage);
 	    }
 
-	    
-	    
 	    private void mostrarTransicionImagen() {
 	        TransicionImagen transicion = new TransicionImagen(presenter, transicionFrame);
 	        transicionFrame.setSize(600, 600);
@@ -255,7 +245,6 @@ package View;
 	        });
 	    }
 
-	
 	    private void initialize() {
 	        frameMenuPpal = new JPanel();
 	        frameMenuPpal.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -268,7 +257,3 @@ package View;
 	        verificarCierreVentana();
 	    }
 	}
-	    
-	
-	
-	

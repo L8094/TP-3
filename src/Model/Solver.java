@@ -38,7 +38,6 @@ public class Solver {
         return ofertas;
     }
 
-
 	private boolean seSuperponen(Oferta a, Oferta b) {
         return !(a.getFin() <= b.getInicio() || b.getFin() <= a.getInicio());
     }

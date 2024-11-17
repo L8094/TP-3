@@ -22,7 +22,6 @@ public class JsonPersistencia {
         this.ruta = ruta;
     }  
     
-
     public void guardarOfertasEnJson(List<Oferta> ofertas) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonArray jsonOfertas = new JsonArray();
@@ -54,7 +53,6 @@ public class JsonPersistencia {
             e.printStackTrace();
         }
     }
-    
     
     public static List<Oferta> listaDeOfertasEnJson(String archivo) {
         List<Oferta> ofertas = null;

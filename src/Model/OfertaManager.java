@@ -27,7 +27,7 @@ import java.io.FileReader;
 	    
 	    public static void agregarOfertaEnMemoria(Oferta oferta) {
 	        ofertasEnMemoria.add(oferta);
-	        System.out.println(oferta.toString() + "OFERTA AGREGADA EN MEMORIA");
+//	        System.out.println(oferta.toString() + "OFERTA AGREGADA EN MEMORIA");
 	    }
 	    
 	
@@ -38,7 +38,6 @@ import java.io.FileReader;
 			    if (!file.exists()) {
 			        throw new RuntimeException("El archivo JSON no existe en la ruta especificada: " + ruta);
 			    }
-			    
 		        try (BufferedReader reader = new BufferedReader(new FileReader(ruta))) {
 		            Gson gson = new Gson();
 		            List<Oferta> ofertas = gson.fromJson(reader, new TypeToken<List<Oferta>>() {}.getType());
@@ -48,7 +47,7 @@ import java.io.FileReader;
 		                }
 		            }
 		        } catch (IOException e) {
-		        	System.out.println("No hay ningun Json creado");
+//		        	System.out.println("No hay ningun Json creado");
 		            e.printStackTrace();
 		        }
 		        return ofertasFiltradas;
@@ -56,7 +55,7 @@ import java.io.FileReader;
 		
 		public static void borrarOfertasDeMemoria() {
 			ofertasEnMemoria.clear();
-            System.out.println("se borro todo");
+//            System.out.println("se borro todo");
         }
 		
 		public static boolean hayOfertasEnMemoria() {

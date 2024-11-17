@@ -5,13 +5,9 @@ import java.util.Comparator;
 public class ComparePorCociente implements Comparator<Oferta> {
 	
 	@Override
-	public int compare(Oferta uno, Oferta dos)
-	{
-		
+	public int compare(Oferta uno, Oferta dos){
 		double cocienteUno = uno.getMonto() / (uno.getFin() - uno.getInicio());
-		double cocienteDos = dos.getMonto() / (dos.getFin() - dos.getInicio());
-		
-	
+		double cocienteDos = dos.getMonto() / (dos.getFin() - dos.getInicio());	
 		if( cocienteUno < cocienteDos )
 			return 1;
 		else if( cocienteUno == cocienteDos )
@@ -19,6 +15,4 @@ public class ComparePorCociente implements Comparator<Oferta> {
 		else
 			return -1;
 	}
-
-	
 }
