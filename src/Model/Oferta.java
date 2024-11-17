@@ -4,23 +4,27 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Oferta {
-	private String usuario;
+	private String nombre;
     private int inicio;
     private int fin;
     private double monto;
     private String fecha;  
+    private Boolean adjudicado;
 
-    public Oferta(int inicio, int fin, double monto,String user) {
+    public Oferta(int inicio, int fin, double monto, String nombre) {
         this.inicio = inicio;
         this.fin = fin;
         this.monto = monto;
-        this.usuario = user;
-        
-        LocalDateTime fechaActualMasUno = LocalDateTime.now().plusDays(1);
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        this.fecha = fechaActualMasUno.format(formato);
+        this.nombre = nombre;
+        this.adjudicado = false;
+        this.fecha = crearFecha();
     }
     
+    private String crearFecha() {
+        LocalDateTime fechaActualMasUno = LocalDateTime.now().plusDays(1);
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return fechaActualMasUno.format(formato);
+    }
 
     public int getInicio() {
         return inicio;
@@ -39,11 +43,19 @@ public class Oferta {
     }
     
     public String getUsuario() {
-    	return this.usuario;
+    	return this.nombre;
+    }
+    
+    public Boolean getAdjudicada() {
+    	return this.adjudicado;
+    }
+    
+    public void adjudicar() {
+    	this.adjudicado = true;
     }
 
     @Override
     public String toString() {
-        return "Oferta [Usuario= "+ usuario + ",inicio=" + inicio + ", fin=" + fin + ", monto=" + monto + ", fecha=" + fecha + "]";
+        return "|Nombre: "+ nombre + " | De: " + inicio + " a " + fin + " hs | Oferta: $" + monto + ", Fecha: " + fecha + "|";
     }
 }

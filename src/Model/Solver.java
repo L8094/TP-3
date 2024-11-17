@@ -27,6 +27,7 @@ public class Solver {
             }
             if (!seSuperpone) {
                 solucion.add(oferta);
+                oferta.adjudicar();
             }
         }
         return solucion;

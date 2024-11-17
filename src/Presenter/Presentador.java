@@ -1,5 +1,7 @@
 package Presenter;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import Model.ComparePorCociente;
 import Model.Oferta;
@@ -18,13 +20,12 @@ public class Presentador{
         this.ofertaManager = new OfertaManager("Ofertas.json");
         this.vistaOfertas = vistaOfertas;
         this.vistaMenuPpal = vistaMenuPpal; 
-     
     }
-    
+
 
     public void agregarOferta(Integer inicio, Integer fin, String dinero, String usuario) {
         double din = Double.parseDouble(dinero);
-        Oferta nuevaOferta = new Oferta(inicio, fin, din,usuario);
+        Oferta nuevaOferta = new Oferta(inicio, fin, din, usuario);
         OfertaManager.agregarOfertaEnMemoria(nuevaOferta);
         vistaOfertas.actualizarOferta(nuevaOferta);
     }
@@ -48,6 +49,23 @@ public class Presentador{
     		vistaMenuPpal.noHayOfertasEnFecha();
     	}
        
+    }
+    
+    public void obtenerLicitaciones() {
+    	try {
+            LocalDateTime fecha1 = LocalDateTime.now().plusDays(1);
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            String fecha = fecha1.format(formato);
+            List<Oferta> ofertasFiltradasPorFecha = OfertaManager.cargarOfertasDesdeJSON(fecha);
+            if (!ofertasFiltradasPorFecha.isEmpty()) {
+                    vistaOfertas.mostrarOfertasEnVentana(ofertasFiltradasPorFecha, fecha);
+        	}  else {
+        		vistaOfertas.noHayOfertasEnFecha();
+        	}
+        	}
+        	catch (RuntimeException a){
+        		vistaOfertas.noHayOfertasEnFecha();
+        	}
     }
 
     public static List<Oferta> adjudicarOfertas(List<Oferta> ofertasFiltradasPorFecha) {

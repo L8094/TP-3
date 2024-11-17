@@ -37,13 +37,13 @@ import java.time.format.DateTimeFormatter;
 
 	    @Test
 	    void testGetFecha() {
-	        String fechaEsperada = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+	        String fechaEsperada = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 	        assertEquals(fechaEsperada, oferta.getFecha());
 	    }
 
 	    @Test
 	    void testToString() {
-	        String expectedString = "Oferta [Usuario= usuarioTest,inicio=1, fin=10, monto=100.0, fecha=" + oferta.getFecha() + "]";
+	        String expectedString = "|Nombre: usuarioTest | De: 1 a 10 hs | Oferta: $100.0, Fecha: " + oferta.getFecha() + "|";
 	        assertEquals(expectedString, oferta.toString());
 	    }
 	}

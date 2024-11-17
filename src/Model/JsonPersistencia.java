@@ -14,17 +14,15 @@ import java.io.IOException;
 import java.util.List;
 
 
-
 public class JsonPersistencia {
 
     private final String ruta;
 
-    // Constructor para permitir una ruta de archivo personalizada
     public JsonPersistencia(String ruta) {
         this.ruta = ruta;
     }  
     
-    
+
     public void guardarOfertasEnJson(List<Oferta> ofertas) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonArray jsonOfertas = new JsonArray();
@@ -41,7 +39,7 @@ public class JsonPersistencia {
 
         for (Oferta oferta : ofertas) {
             JsonObject jsonOferta = new JsonObject();
-            jsonOferta.addProperty("Nombre y Apellido", oferta.getUsuario());;
+            jsonOferta.addProperty("nombre", oferta.getUsuario());;
             jsonOferta.addProperty("inicio", oferta.getInicio());
             jsonOferta.addProperty("fin", oferta.getFin());
             jsonOferta.addProperty("monto", oferta.getMonto());
@@ -51,7 +49,7 @@ public class JsonPersistencia {
         }
         try (FileWriter archivo = new FileWriter(ruta)) {
             gson.toJson(jsonOfertas, archivo);
-            System.out.println("Ofertas guardadas en " + ruta);
+//            System.out.println("Ofertas guardadas en " + ruta);
         } catch (IOException e) {
             e.printStackTrace();
         }
